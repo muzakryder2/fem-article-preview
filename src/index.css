@@ -1,13 +1,215 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  background: hsl(210, 46%, 95%);
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 750px;
+  height: 290px;
+  display: flex;
+}
+
+.card__image {
+  flex: 4;
+  overflow: hidden;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.card__image > img {
+  width: 360px;
+  object-fit: cover;
+}
+
+.card__content {
+  flex: 6;
+  background-color: #ffffff;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.card__content > h1 {
+  font-size: 1.3rem;
+  color: hsl(217, 19%, 35%);
+  padding: 1.5rem 3rem 0 3rem;
+}
+
+.card__content > p {
+  color: hsl(214, 17%, 51%);
+  padding: 1.5rem 3rem 0 3rem;
+  line-height: 1.5;
+}
+
+.card__content__social {
+  margin-top: 1.5rem;
+  display: flex;
+}
+
+.card__content__social > img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 3rem;
+}
+
+.card__content__nameDate {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.card__content__nameDate > h3 {
+  font-size: 0.8rem;
+  color: hsl(217, 19%, 35%);
+}
+
+.card__content__nameDate > p {
+  font-size: 0.8rem;
+  color: hsl(214, 17%, 51%);
+}
+
+.share-btn {
+  font-size: 24px;
+  background-color: hsl(210, 46%, 95%);
+  color: hsl(214, 17%, 51%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 8px;
+  margin-left: 145px;
+  transition: all 0.3s ease;
+}
+
+.share__modal__wrapper {
+  position: absolute;
+  width: 225px;
+  height: 55px;
+  right: -45px;
+  bottom: 100px;
+}
+
+.share__modal {
+  position: relative;
+  background-color: hsl(217, 19%, 35%);
+  color: hsl(210, 46%, 95%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 225px;
+  height: 55px;
+  border-radius: 10px;
+}
+
+.share__modal__triangle {
+  clip-path: polygon(50% 38%, 0 0, 100% 0);
+  position: absolute;
+  left: 50%;
+  bottom: -29px;
+  width: 30px;
+  height: 30px;
+  background-color: hsl(217, 19%, 35%);
+  transform: translateX(-50%);
+}
+
+.share__modal p {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: hsl(214, 17%, 51%);
+}
+
+.share__modal-link {
+  font-size: 1.25rem;
+  margin-left: 0.5rem;
+}
+
+.active {
+  color: hsl(210, 46%, 95%);
+  background-color: hsl(217, 19%, 35%);
+}
+
+@media screen and (max-width: 850px) {
+  .card {
+    width: 325px;
+    height: unset;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .card__image {
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 10px;
+  }
+
+  .card__content {
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 10px;
+    margin-top: -2px;
+  }
+
+  .card__content > h1 {
+    font-size: 1rem;
+    padding: 1.5rem 2rem 0 2rem;
+  }
+
+  .card__content > p {
+    padding: 1.5rem 2rem 0 2rem;
+  }
+
+  .card__content__social {
+    height: 75px;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  .share-btn {
+    margin-left: 50px;
+    z-index: 10;
+  }
+
+  .share__modal__wrapper {
+    position: absolute;
+    width: 325px;
+    height: 75px;
+    right: 0;
+    bottom: 0px;
+  }
+
+  .share__modal {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    justify-content: flex-start;
+    padding-left: 30px;
+  }
+
+  .active {
+    background-color: hsl(214, 17%, 51%);
+    color: hsl(210, 46%, 95%);
+  }
 }
